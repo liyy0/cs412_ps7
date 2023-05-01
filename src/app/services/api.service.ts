@@ -48,7 +48,7 @@ export class ApiService {
             map(data => ({data, fromCache: false}))
         );
     }
-    localStorage.clear();
+    // localStorage.clear();
 }}
 
 
