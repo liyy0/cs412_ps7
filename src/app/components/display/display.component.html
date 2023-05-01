@@ -1,0 +1,12 @@
+<div *ngIf="data">
+
+    hello
+    <div *ngFor="let item of data.data.forecast.forecastday[0].hour"> 
+        <h1>
+            {{item.time|json}}
+        </h1>
+
+        {{item.condition.text|json}}
+
+</div>
+  

@@ -1,0 +1,11 @@
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <div > Input a location name, for example, paris.</div>
+    <input type="input" placeholder="enter input" formControlName="input">
+    <br>
+    <span *ngIf="input && input.invalid && input.touched" style="color:red"> this input is not valid</span>
+    <br>
+    <button [disabled]="loginForm.invalid" (click)="onclick()"> Check! </button>
+</form>
+<br>
+
+<!-- [disabled]="loginForm.invalid" -->
