@@ -31,8 +31,7 @@ export class ApiService {
 
   getData(geo:any): Observable<{data: any, fromCache: boolean}> {
     const cacheKey = `my-data-cache${geo}`;
-    // const cachedData = localStorage.getItem(geo);
-    const cachedData = false;
+    const cachedData = localStorage.getItem(geo);
 
     if (cachedData) {
         console.log('Data retrieved from cache.');
@@ -50,19 +49,3 @@ export class ApiService {
     }
     // localStorage.clear();
 }}
-
-
-  // this.data.subscribe((next:any[]) => {
-  //   localStorage[this.CACHE_KEY] = JSON.stringify(next);
-  // });
-
-  // getData() {
-  //   const cachedData = this.cacheService.getDataFromCache();
-  //   if (cachedData) {
-  //     this.dataRetrievedFromCache = true;
-  //     return cachedData;
-  //   } else {
-  //     this.dataRetrievedFromCache = false;
-  //     return this.http.get('https://api.example.com/data');
-  //   }
-  // }
